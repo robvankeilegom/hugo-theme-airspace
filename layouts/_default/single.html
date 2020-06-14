@@ -10,8 +10,8 @@
 					<h2 class="post-title">{{ .Title }}</h2>
 					<div class="post-meta">
 						<ul>
-              <li><i class="ion-calendar"></i> {{ .PublishDate.Format "January 2, 2006" }}</li>
-              <li><i class="ion-pricetags"></i> 
+              <li><i class="ion-calendar"></i> {{ .PublishDate.Day }} {{ index $.Site.Data.nl.months (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Year }} </li>
+              <li><i class="ion-pricetags"></i>
                 {{ range $index, $elements:= .Params.Tags }}
                 {{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | lower }}">{{ . | humanize }}</a>
 								{{ end }}
