@@ -18,9 +18,11 @@
               </li>
             </ul>
 					</div>
-					<div class="post-thumb">
-						<img class="img-responsive" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
-					</div>
+                    {{ if isset .Params "image" }}
+                        <div class="post-thumb float-left">
+                            <img class="img-responsive" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+                        </div>
+                    {{ end }}
 					<div class="post-content post-excerpt">
 						{{ .Content }}
 					</div>
