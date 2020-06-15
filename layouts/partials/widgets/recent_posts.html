@@ -3,7 +3,11 @@
     {{ range first 4 (where .Site.Pages "Type" "post") }}
     <div class="media">
       <a class="pull-left" href="{{ .Permalink }}">
+        {{ if isset .Params "image" }}
         <img class="media-object" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+        {{ else }}
+        <img class="media-object" src="{{ .Params.bg_image | relURL }}" alt="{{ .Title }}">
+        {{ end }}
       </a>
       <div class="media-body">
         <h4 class="media-heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
