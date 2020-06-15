@@ -13,7 +13,7 @@
               <li><i class="ion-calendar"></i> {{ .PublishDate.Day }} {{ index $.Site.Data.nl.months (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Year }} </li>
               <li><i class="ion-pricetags"></i>
                 {{ range $index, $elements:= .Params.Tags }}
-                {{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | lower }}">{{ . | humanize }}</a>
+                {{ if ne $index 0 }}, {{ end }}<a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}">{{ . | humanize }}</a>
 								{{ end }}
               </li>
             </ul>
