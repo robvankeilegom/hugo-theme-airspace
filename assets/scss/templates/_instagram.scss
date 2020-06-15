@@ -22,3 +22,53 @@
 		}
 	}
 }
+
+
+.instagram-post {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: .2s ease;
+    }
+
+    ul {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: .2s ease;
+
+        a {
+            transition: .2s ease;
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: #ff6f00 !important;
+        }
+    }
+
+
+    &:hover::before {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &:hover ul {
+        visibility: visible;
+        opacity: 1;
+    }
+}
