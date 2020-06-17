@@ -23,46 +23,6 @@ $(document).ready(function () {
 		});
 	}
 
-	$('.portfolio-single-slider').slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 2000
-
-	});
-
-	$('.clients-logo').slick({
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 2000
-	});
-
-	$('.testimonial-slider').slick({
-		slidesToShow: 1,
-		infinite: true,
-		arrows: false,
-		autoplay: true,
-		autoplaySpeed: 2000
-	});
-
-
-	// Magnific Popup Image
-	$('.portfolio-popup').magnificPopup({
-		type: 'image',
-		removalDelay: 160, //delay removal by X to allow out-animation
-		callbacks: {
-			beforeOpen: function () {
-				// just a hack that adds mfp-anim class to markup
-				this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-				this.st.mainClass = this.st.el.attr('data-effect');
-			}
-		},
-		closeOnContentClick: true,
-		midClick: true,
-		fixedContentPos: true,
-		fixedBgPos: true
-	});
 
 	//  Count Up
 	function counter() {
@@ -113,32 +73,3 @@ if (($('#instafeed').length) !== 0) {
   userFeed.run();
 }
 
-setTimeout(function () {
-  $('.instagram-slider').slick({
-    dots: false,
-    speed: 300,
-    autoplay: true,
-    arrows: false,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 4
-      }
-    },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2
-        }
-      }
-    ]
-  });
-}, 1500);
