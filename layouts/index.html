@@ -37,10 +37,8 @@
       <div class="col-lg-4 col-sm-6 mb-5">
           <a href="{{.Permalink}}" class="btn btn-transparent">
               <article class="text-center">
-                  {{ if isset .Params "image" }}
-                  <img class="img-responsive mb-4" src="{{.Params.Image | absURL }}" alt="post-thumb">
-                  {{ else }}
-                  <img class="img-responsive mb-4" src="{{.Params.bg_image | absURL }}" alt="post-thumb">
+                  {{ if isset .Params "thumb_image" }}
+                  <img class="img-responsive mb-4" src="{{.Params.thumb_image | absURL }}" alt="post-thumb">
                   {{ end }}
                   <p class="text-uppercase mb-2">{{.Params.Categories}}</p>
                   <h4 class="title-border"><a class="text-dark" href="{{.Permalink}}">{{.Title}}</a></h4>
