@@ -24,7 +24,7 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 
 <IfModule mod_headers.c>
-    <FilesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+    <FilesMatch ".(css|jpg|jpeg|png|gif|js|ico|ttf)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
 </IfModule>
