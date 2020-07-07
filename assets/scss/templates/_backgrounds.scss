@@ -2,6 +2,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+    background-position: center;
 
 	@include tablet {
 		background-attachment: scroll;
