@@ -56,7 +56,7 @@
 
 
 /*--
-	features-work Start 
+	features-work Start
 --*/
 
 #features-work {
@@ -73,4 +73,14 @@
 			}
 		}
 	}
+}
+img[src$='#floatleft']
+{
+    float:left;
+    margin: 0 20px 10px 0;
+}
+
+img[src$='#floatright']
+{
+    float:right;
 }

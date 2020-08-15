@@ -34,7 +34,7 @@
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
     <div class="row masonry-container">
       {{ range $paginator.Pages }}
-      <div class="col-lg-4 col-sm-6 mb-5">
+      <div class="col-lg-4 col-sm-6 mb-5 pull-right">
           <a href="{{.Permalink}}" class="btn btn-transparent">
               <article class="text-center">
                   {{ if isset .Params "thumb_image" }}
