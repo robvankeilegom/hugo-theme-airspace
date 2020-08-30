@@ -84,3 +84,9 @@ img[src$='#floatright']
 {
     float: right;
 }
+
+.masonry-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
