@@ -11,6 +11,23 @@
 					<div class="post-meta">
 						<ul>
               <li><i class="ion-calendar"></i> {{ .PublishDate.Day }} {{ index $.Site.Data.nl.months (printf "%d" .PublishDate.Month) }} {{ .PublishDate.Year }} </li>
+              {{ if isset .Params "author" }}
+                  <li>
+                      <i class="ion-android-people"></i>
+                      {{ i18n "posted_by" }}
+                      {{if site.Params.multi_author}}
+                          {{ range $index, $elements:= .Params.Author }}{{ if ne $index 0 }}, {{ end }}
+                              <!-- <a class="text-primary" href="{{ `author/` | relLangURL }}{{ . | urlize }}"> -->
+                              <!--     {{ . }} -->
+                              <!-- </a> -->
+                          {{ end }}
+                      {{else}}
+                          <!-- <a class="text-primary" href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}"> -->
+                              {{ .Params.Author }}
+                          <!-- </a> -->
+                      {{end}}
+                  </li>
+              {{end}}
               {{ if isset .Params "tags" }}
               <li><i class="ion-pricetags"></i>
                 {{ range $index, $elements:= .Params.Tags }}
