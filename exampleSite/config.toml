@@ -133,8 +133,8 @@ email = "demo@email.com"
 location = "North Main Street,Brooklyn Australia"
 # contact form action
 contact_form_action = "#" # contact form works with : https://formspree.io
-# Google Analytics
-google_analytics_id = "" # Your ID# search
+# Umami Analytics
+umami_analytics_id = "" # Your ID# search
 # multi-author support (if set to true, you must use an Array in the author field)
 multi_author = false
 
