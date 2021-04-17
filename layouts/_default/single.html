@@ -17,6 +17,15 @@
                                 {{ .PublishDate.Year }}
                             </li>
 
+                            {{ if isset .Params "lastmod" }}
+                            <li>
+                                <i class="ion-edit"></i>
+                                {{ .Params.LastMod.Day }}
+                                {{ index $.Site.Data.nl.months (printf "%d" .Params.LastMod.Month) }}
+                                {{ .Params.LastMod.Year }}
+                            </li>
+                            {{end}}
+
                             {{ if isset .Params "author" }}
                             <li>
                                 <i class="ion-android-people"></i>
