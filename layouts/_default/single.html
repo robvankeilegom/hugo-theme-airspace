@@ -17,7 +17,7 @@
                                 {{ .PublishDate.Year }}
                             </li>
 
-                            {{ if isset .Params "lastmod" }}
+                            {{ if (and (isset .Params "lastmod") (gt .Params.LastMod .PublishDate)) }}
                             <li>
                                 <i class="ion-edit"></i>
                                 {{ .Params.LastMod.Day }}
