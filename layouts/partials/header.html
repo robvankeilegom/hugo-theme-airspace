@@ -49,15 +49,33 @@
                                     role="button"
                                     aria-haspopup="true"
                                     aria-expanded="false"
-                                >{{ .Name }} <span class="ion-ios-arrow-down"></span></a>
+                                >
+                                    {{ .Name }} <span class="ion-ios-arrow-down"></span>
+                                </a>
                                 <ul class="dropdown-menu">
                                     {{ range .Children }}
-                                    <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+                                    <li>
+                                        <a
+                                            href="{{ .URL | absLangURL }}"
+                                            target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'
+                                            {{ if in .URL "https://" }}rel="noopener"{{ end }}
+                                        >
+                                            {{ .Name }}
+                                        </a>
+                                    </li>
                                     {{ end }}
                                 </ul>
                             </li>
                             {{ else }}
-                            <li><a href="{{ .URL | absLangURL }}">{{ .Name }}</a></li>
+                            <li>
+                                <a
+                                    href="{{ .URL | absLangURL }}"
+                                    target='{{ if in .URL "https://" }}_blank{{ else }}_self{{ end }}'
+                                    {{ if in .URL "https://" }}rel="noopener"{{ end }}
+                                >
+                                    {{ .Name }}
+                                </a>
+                            </li>
                             {{ end }}
                             {{ end }}
 
